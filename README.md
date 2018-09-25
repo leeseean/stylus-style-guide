@@ -54,16 +54,17 @@ Table of Contents
 h1
   padding: 0
   margin: 0
-h2 {
+h2 
   color: #846383
   margin-bottom: 20px
-}
+
 
 
 // good
-h1
+h1 {
     margin: 0
     padding: 0
+}
     
 h2 {
     color: #846383
@@ -515,7 +516,7 @@ font-family: 'proxima-nova'
 
 ### <a name="declaration">定义</a>
 
-使用`=`声明变量。变量应该放在一个名为`_variables.styl`的文件中。变量用于整个样式表中使用的常用颜色，字体和数字。
+使用`"="`声明变量。变量以`"$"`开头，变量应该放在一个名为`_variables.styl`的文件中。变量用于整个样式表中使用的常用颜色，字体和数字。
 
 * Variables should follow dashed formatting
 * Ensure that variables are not ambiguous and describe the value they hold. 
@@ -534,12 +535,12 @@ secondary = #008fc5
 // good
 
 // error and success colors
-error-red = #ea5b54
-success-green = #98fe98
+$error-red = #ea5b54
+$success-green = #98fe98
 
 // brand colors
-brand-primary-color = #00853e
-brand-secondary-color = #008fc5
+$brand-primary-color = #00853e
+$brand-secondary-color = #008fc5
 ```
 
 ### <a name="defaults">默认值</a>
@@ -548,7 +549,7 @@ brand-secondary-color = #008fc5
 
 ```sass
 body {
-    font: normal font-size/line-height "proxima-nova", sans-serif
+    font: normal $font-size/$line-height "proxima-nova", sans-serif
 }
 ```
 
@@ -565,8 +566,8 @@ p
 
 // good
 p {
-    font-size: font-size * 1.15
-    line-height: line-height * 1.2
+    font-size: $font-size * 1.15
+    line-height: $line-height * 1.2
 }
 ```
 
